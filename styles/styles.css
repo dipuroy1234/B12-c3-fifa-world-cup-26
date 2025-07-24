@@ -5,6 +5,9 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+img {
+  max-width: 100%;
+}
 .container {
   max-width: 1280px;
   margin: auto;
@@ -39,11 +42,14 @@
 }
 .banner-left {
   padding: 100px;
+  flex: 1;
 }
 .banner-right img {
   display: block;
 }
-
+.banner-right {
+  flex: 1;
+}
 /* upcoming msg */
 .upcoming-match {
   display: flex;
@@ -70,6 +76,9 @@
 }
 .upcoming-match-right {
   flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
 }
 .upcoming-match-right .card {
   border: 1px solid rgba(232, 232, 232);
@@ -99,4 +108,48 @@
 }
 .upcoming-match .card .card-body {
   padding: 20px;
+}
+
+/* laptop/tab */
+
+@media screen and (max-width: 992px) {
+  /* banner */
+  .banner h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  /* upcoming match */
+  .upcoming-match {
+    flex-direction: column;
+  }
+  .upcoming-match-left {
+    flex-direction: row;
+    width: 100%;
+    background-color: transparent;
+  }
+  .upcoming-match-left > * {
+    flex: 1;
+  }
+  .upcoming-match-left .btn {
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 10px;
+  }
+  .upcoming-match-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Mobile Phone */
+@media screen and (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner .banner-left {
+    margin-bottom: 10px;
+  }
+  .banner .banner-left p {
+    /* max-width: 100%; */
+    margin: 15px auto;
+  }
 }
